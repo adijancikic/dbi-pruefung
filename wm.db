@@ -1,0 +1,51 @@
+from sqlite3 import connect
+
+// welche mannschaften haben gespielt und wie ist das spiel ausgegangen
+// fkt sagt wie ist das spiel ausgegangen
+
+def result(team1, team2):
+    sql = """
+        SELECT team_name
+        FROM team t
+        INNER JOIN game g
+        ON t.game_id = g.id
+        WHERE result = ?
+    """
+
+conn.execute(sql,(team_name_home, team_name_guests)).fetchone
+
+with sqlite3 connect("dbi.sql"):
+    result(Austria, Jordan)
+
+
+CREATE TABLE team (
+    id INT
+    team_name_home TEXT
+    team_name_guests TEXT
+    game_id INT
+
+    PRIMARY KEY (id)
+    FOREIGN KEY(game_id) REFERENCES game(id)
+
+)
+
+
+CREATE TABLE game(
+    id INT
+    result TEXT
+    
+    team_id INT
+    PRIMARY KEY(id)
+    FOREIGN KEY(team_id) REFERENCES team(id)
+)
+
+// ich habe entschieden zwischentabelle nicht zu erstellen wegen readability
+
+INSERT INTO team (1, Austria)
+INSERT INTO team (2, Germany)
+
+INSERT INTO game (1, 1:1)
+
+conn.execute(sql,()).f
+
+with sqlite3 connect("dbi.sql")
