@@ -14,8 +14,8 @@ def result(team1, team2):
 
 conn.execute(sql,(team_name_home, team_name_guests)).fetchone
 
-with sqlite3 connect("dbi.sql"):
-    result(Austria, Jordan)
+with sqlite3 connect("dbi.sql") as conn:
+    result(conn, Austria, Jordan)
 
 
 CREATE TABLE team (
