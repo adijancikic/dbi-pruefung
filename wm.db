@@ -46,5 +46,5 @@ CREATE TABLE game(
 INSERT INTO team (Austria, Slovenia, 1)
 INSERT INTO team (2, Germany)
 
-INSERT INTO game (1, 1:1, 1)
+INSERT INTO game (1, 1:1, Austria, Slovenia)
 
