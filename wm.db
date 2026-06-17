@@ -19,12 +19,12 @@ with sqlite3 connect("dbi.sql") as conn:
 
 
 CREATE TABLE team (
-    id INT
-    team_name_home TEXT
-    team_name_guests TEXT
+    team_home text
+    team_guests text
+    
     game_id INT
 
-    PRIMARY KEY (id)
+    PRIMARY KEY (team_home, team_guests)
     FOREIGN KEY(game_id) REFERENCES game(id)
 
 )
@@ -34,15 +34,17 @@ CREATE TABLE game(
     id INT
     result TEXT
     
-    team_id INT
+    team_home text
+    team_guests text
     PRIMARY KEY(id)
-    FOREIGN KEY(team_id) REFERENCES team(id)
+    FOREIGN KEY(team_home) REFERENCES team(team_home)
+    FOREIGN KEY(team_guests) REFERENCES team(team_guests)
 )
 
 // ich habe entschieden zwischentabelle nicht zu erstellen wegen readability
 
-INSERT INTO team (1, Austria)
+INSERT INTO team (Austria, Slovenia, 1)
 INSERT INTO team (2, Germany)
 
-INSERT INTO game (1, 1:1)
+INSERT INTO game (1, 1:1, 1)
 
