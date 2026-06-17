@@ -3,7 +3,7 @@ from sqlite3 import connect
 // welche mannschaften haben gespielt und wie ist das spiel ausgegangen
 // fkt sagt wie ist das spiel ausgegangen
 
-def result(team1, team2):
+def result(conn, team1, team2):
     sql = """
         SELECT team_name
         FROM team t
