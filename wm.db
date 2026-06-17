@@ -46,6 +46,3 @@ INSERT INTO team (2, Germany)
 
 INSERT INTO game (1, 1:1)
 
-conn.execute(sql,()).f
-
-with sqlite3 connect("dbi.sql")
